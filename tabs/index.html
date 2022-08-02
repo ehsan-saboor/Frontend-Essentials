@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f5f5f5;
+            font-family: "Poppins", sans-serif;
+            line-height: 2em;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 80px; 
+        }
+
+        .tab-wrapper {
+            text-align: center;
+            display: block;
+            margin: auto;
+            max-width: 500px;
+        }
+
+        .tabs {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab-link {
+            margin: 0 1%;
+            list-style: none;
+            padding: 10px 40px;
+            color: #aaa;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all ease 0.5s;
+            border-bottom: solid 3px rgba(255, 255, 255, 0);
+            letter-spacing: 1px;
+        }
+
+        .tab-link:hover {
+            color: #999;
+            border-color: #999;
+        }
+
+        .tab-link.active {
+            color: #333;
+            border-color: #333;
+        }
+
+        .tab-link:nth-of-type(1).active {
+            color: #ee6534;
+            border-color: #ee6534;
+        }
+
+        .tab-link:nth-of-type(2).active {
+            color: #1790d2;
+            border-color: #1790d2;
+        }
+
+        .tab-link:nth-of-type(3).active {
+            color: #eec63b;
+            border-color: #eec63b;
+        }
+
+        .content-wrapper {
+            padding: 40px 80px;
+        }
+
+        .tab-content {
+            display: none;
+            text-align: center;
+            color: #888;
+            font-weight: 300;
+            font-size: 15px;
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeIn 0.5s ease 1 forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="tab-wrapper">
+            <ul class="tabs">
+                <li class="tab-link active" data-tab="1">HTML</li>
+                <li class="tab-link" data-tab="2">CSS</li>
+                <li class="tab-link" data-tab="3">jQuery</li>
+            </ul>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="tab-1" class="tab-content active">
+                Hypertext Markup Language (HTML) is the standard markup language for
+                creating web pages and web applications. With Cascading Style Sheets
+                (CSS) and JavaScript, it forms a triad of cornerstone technologies for
+                the World Wide Web.
+            </div>
+
+            <div id="tab-2" class="tab-content">
+                CSS stands for Cascading Style Sheets. CSS describes how HTML elements
+                are to be displayed on screen, paper, or in other media. CSS saves a
+                lot of work. It can control the layout of multiple web pages all at
+                once.
+            </div>
+
+            <div id="tab-3" class="tab-content">
+                jQuery is a fast, small, and feature-rich JavaScript library. It makes
+                things like HTML document traversal and manipulation, event handling,
+                animation, and Ajax much simpler with an easy-to-use API that works
+                across a multitude of browsers.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".tab-link").click(function () {
+            var tabID = $(this).attr("data-tab");
+
+            $(this).addClass("active").siblings().removeClass("active");
+
+            $("#tab-" + tabID)
+                .addClass("active")
+                .siblings()
+                .removeClass("active");
+        });
+    </script>
+</body>
+
+</html>

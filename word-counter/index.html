@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            max-width: 1320px;
+            margin: auto;
+            padding: 150px;
+        }
+
+        h1 {
+            background-color: aquamarine;
+            color: white;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        textarea {
+            border: 1px solid aquamarine;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 25px;
+            color: white;
+            background-color: aquamarine;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1>Word Counter</h1>
+    <textarea id="wordcounter" rows="10"></textarea>
+    <p>
+        <span id="word">0</span> Word and
+        <span id="char">0</span> Character
+    </p>
+
+
+
+    <script>
+
+        let textbox = document.getElementById("wordcounter")
+
+        // count character
+        textbox.addEventListener("input", function () {
+            let text = this.value;
+            let chararter = text.length;
+            document.getElementById("char").innerHTML = chararter
+
+            // count word
+            text = text.trim() // to remove extra space from start and end
+            let wordcount = text.split(" ") // it will split text into array
+            let cleanword = wordcount.filter(function (element) { // it will remove empty space from middle
+                return element != "";
+            })
+            let wordcountlenght = cleanword.length
+            document.getElementById("word").innerHTML = wordcountlenght
+            console.log(wordcount)
+
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

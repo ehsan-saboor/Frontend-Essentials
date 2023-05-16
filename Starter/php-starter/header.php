@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" href="./assets/css/aos.css" />
     <title>TITLE HERE </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="./assets/css/video.css" />
     <link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/owl.theme.default.cssx">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
 </head>

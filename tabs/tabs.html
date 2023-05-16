@@ -1,0 +1,63 @@
+<!-- html -->
+<div class="services__data">
+    <!-- Tabs -->
+    <div class="services__tabs tabs">
+        <a href="javascript:;" data-tab="1" class="active tab">A</a>
+        <a href="javascript:;" data-tab="2" class="tab">B</a>
+        <a href="javascript:;" data-tab="3" class="tab">C</a>
+        <a href="javascript:;" data-tab="4" class="tab">D</a>
+    </div>
+    <!-- Tabs Contents -->
+    <div class="tab-content">
+        <!-- Tabs Content 1 -->
+        <div data-content="1" class="services__data-content content active">
+            1
+        </div>
+
+        <!-- Tabs Content 2 -->
+        <div data-content="2" class="services__data-content content">
+            2
+        </div>
+
+        <!-- Tabs Content 3 -->
+        <div data-content="3" class="services__data-content content">
+            3
+        </div>
+
+        <!-- Tabs Content 4 -->
+        <div data-content="4" class="services__data-content content">
+            4
+        </div>
+    </div>
+</div>
+
+<!-- css -->
+<!--
+
+section.sec-service [data-content] {
+	display: none;
+}
+
+section.sec-service .active[data-content] {
+	display: block;
+} 
+
+-->
+
+<!--
+    
+// services tabs
+$('[data-tab]').on('click', function (e) {
+    $(this).addClass('active').siblings('[data-tab]').removeClass('active')
+    /* $(this).siblings('[data-content=' + $(this).data('tab') +
+    ']').addClass('active').siblings('[data-content]').removeClass('active')
+    e.preventDefault() */
+
+    $(this).closest('.services__data').find('[data-content]').removeClass('active')
+    $(this).closest('.services__data').find('[data-content=' + $(this).data('tab') + ']').addClass('active')
+
+    /* $(this).addClass('active').siblings('[data-tab]').removeClass('active').siblings('[data-content=' +
+    $(this).data('tab') + ']').addClass('active').siblings('[data-content]').removeClass('active') */
+})
+
+-->

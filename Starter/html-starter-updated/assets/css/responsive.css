@@ -1,0 +1,24 @@
+@media (max-width: 1200px){}
+@media (max-width: 1025px){}
+@media (max-width: 768px){
+    .mobile-menu {
+        display: block;
+    }
+
+    .sidenav {
+        padding-top: 84px;
+    }
+
+    .sidenav a {
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        padding: 20px 0px 8px 0px;
+    }
+
+    .web-header {
+        display: none;
+    }
+}
+@media (max-width: 576px){}
+@media (max-width: 320px){}
